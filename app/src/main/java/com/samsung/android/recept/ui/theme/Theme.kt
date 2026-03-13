@@ -35,26 +35,46 @@ fun Modifier.gradientBackground() = this
             .graphicsLayer(rotationZ = -175f)
             .fillMaxSize()
     )
+
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+    primary             = VioletCore,
+    onPrimary           = Color(0xFFFFFFFF),
+    primaryContainer    = VioletDeep,
+    onPrimaryContainer  = Color(0xFFFFFFFF),
+    secondary           = GreenSuccess,
+    onSecondary         = Color(0xFFFFFFFF),
+    secondaryContainer  = GreenDeep,
+    onSecondaryContainer= Color(0xFFFFFFFF),
+    error               = ErrorRed,
+    onError             = Color(0xFFFFFFFF),
+    background          = Dark_Background,
+    onBackground        = Dark_OnBackground,
+    surface             = Dark_Surface,
+    onSurface           = Dark_OnBackground,
+    surfaceVariant      = Dark_SurfaceOverlay,
+    onSurfaceVariant    = Dark_OnBackgroundMid,
+    outline             = Dark_SurfaceBorder,
+    outlineVariant      = Dark_AgentBubbleBorder,
 )
-
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    primary             = VioletCore,
+    onPrimary           = Color(0xFFFFFFFF),
+    primaryContainer    = Light_UserBubbleBg,
+    onPrimaryContainer  = VioletDeep,
+    secondary           = GreenSuccess,
+    onSecondary         = Color(0xFFFFFFFF),
+    secondaryContainer  = Light_SuccessBubbleBg,
+    onSecondaryContainer= GreenDeep,
+    error               = ErrorRed,
+    onError             = Color(0xFFFFFFFF),
+    background          = Light_Background,
+    onBackground        = Light_OnBackground,
+    surface             = Light_Surface,
+    onSurface           = Light_OnBackground,
+    surfaceVariant      = Light_SurfaceCard,
+    onSurfaceVariant    = Light_OnBackgroundMid,
+    outline             = Light_SurfaceBorder,
+    outlineVariant      = Light_AgentBubbleBorder,
 )
 
 @Composable
