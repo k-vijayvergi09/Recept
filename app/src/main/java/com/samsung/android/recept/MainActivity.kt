@@ -38,7 +38,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     Box(modifier.fillMaxSize(), contentAlignment = Alignment.CenterStart) {
         Text(
             text = "Hello $name!",
-            color = Color.White,
             fontSize = 40.sp
         )
     }

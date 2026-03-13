@@ -17,7 +17,7 @@ fun GradientScaffold(
     content: @Composable (PaddingValues) -> Unit
 ) {
     Scaffold(
-        modifier = modifier.gradientBackground(),
+        modifier = modifier,
         // Make the scaffold background transparent so our gradient shows through
         containerColor = MaterialTheme.colorScheme.background.copy(alpha = 0f),
         topBar = topBar,
