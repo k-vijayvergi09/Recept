@@ -4,14 +4,16 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import com.samsung.android.recept.ui.theme.GradientScaffold
+import androidx.compose.ui.unit.sp
+import com.samsung.android.recept.ui.app.ReceptApp
 import com.samsung.android.recept.ui.theme.ReceptTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,11 +22,11 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ReceptTheme {
-                GradientScaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+               ReceptApp(modifier = Modifier.fillMaxSize()) { modifier ->
+                   Greeting(
+                       modifier = modifier,
+                       name = "Android",
+                   )
                 }
             }
         }
@@ -33,10 +35,13 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+    Box(modifier.fillMaxSize(), contentAlignment = Alignment.CenterStart) {
+        Text(
+            text = "Hello $name!",
+            color = Color.White,
+            fontSize = 40.sp
+        )
+    }
 }
 
 @Preview(showBackground = true)
