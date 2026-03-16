@@ -10,10 +10,15 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import com.samsung.android.recept.ui.app.AskPermission
+import com.samsung.android.recept.ui.app.GetStarted
 import com.samsung.android.recept.ui.app.ReceptApp
+import com.samsung.android.recept.ui.onboarding.AskPermissionScreen
+import com.samsung.android.recept.ui.onboarding.GetStartedScreen
 import com.samsung.android.recept.ui.theme.ReceptTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,11 +27,17 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ReceptTheme {
-               ReceptApp(modifier = Modifier.fillMaxSize()) { modifier ->
-                   Greeting(
-                       modifier = modifier,
-                       name = "Android",
-                   )
+               ReceptApp(modifier = Modifier.fillMaxSize()) { modifier, navController ->
+                   NavHost(navController = navController, startDestination = GetStarted) {
+                       composable<GetStarted> {
+                           GetStartedScreen(modifier) {
+                               navController.navigate(AskPermission)
+                           }
+                       }
+                       composable<AskPermission> {
+                           AskPermissionScreen()
+                       }
+                   }
                 }
             }
         }
