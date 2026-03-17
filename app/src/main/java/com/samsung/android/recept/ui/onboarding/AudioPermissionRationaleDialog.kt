@@ -14,7 +14,7 @@ fun AudioPermissionRationaleDialog(
     AlertDialog(
         title = { Text("Audio Permission Required") },
         text = {
-            Text("We need to record audio to use the app. Please grant the permission on the next screen.")
+            Text("We need to record audio to use the app. Please grant the mic permission on the next screen.")
         },
         onDismissRequest = onDismiss,
         confirmButton = { Button(onClick = onConfirm) { Text("Confirm") } },

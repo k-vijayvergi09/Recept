@@ -7,3 +7,6 @@ object GetStarted
 
 @Serializable
 object AskPermission
+
+@Serializable
+object DrawOverApps
