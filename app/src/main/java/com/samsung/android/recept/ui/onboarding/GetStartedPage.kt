@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.sp
 import com.samsung.android.recept.ui.app.SeamlessOrbIdle
 
 @Composable
-fun GetStartedScreen(modifier: Modifier = Modifier, onClick: () -> Unit) {
+fun GetStartedPage(modifier: Modifier = Modifier, onClick: () -> Unit) {
     Column(modifier = modifier.fillMaxSize(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
         SeamlessOrbIdle(darkTheme = isSystemInDarkTheme())
         Text(

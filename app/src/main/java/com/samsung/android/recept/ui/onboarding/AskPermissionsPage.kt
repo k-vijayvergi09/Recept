@@ -29,7 +29,7 @@ fun Context.findActivity(): Activity? = when (this) {
 
 
 @Composable
-fun AskPermissionScreen() {
+fun AskPermissionPage() {
     val context = LocalContext.current
     val activity = context.findActivity()
     val permission = Manifest.permission.RECORD_AUDIO
@@ -47,7 +47,7 @@ fun AskPermissionScreen() {
         )
     }
 
-    var showRationaleDialog by remember { mutableStateOf(false) }
+    var showRationaleDialog by remember { mutableStateOf(true) }
     val coroutineScope = rememberCoroutineScope()
 
     LaunchedEffect(Unit) {
